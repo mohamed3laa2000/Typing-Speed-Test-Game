@@ -110,6 +110,7 @@ document.querySelector(".button").onclick = (e) => {
         document.body.appendChild(finish);
         document.querySelector("#finish").append("Game Over");
         document.querySelector("#finish").className = "failed";
+        document.querySelector(".input").blur();
         document.querySelector("#select").style.display = "block";
         document.querySelector(".top-massage").style.display = "block";
         e.target.style.display = "block";
@@ -119,7 +120,6 @@ document.querySelector(".button").onclick = (e) => {
         textinput.value = "";
         pickFromWords();
         secLeft();
-
         if (document.querySelectorAll(".pre-words div").length == 0) {
           setTimeout(() => {
             document.querySelector("#select").style.display = "block";
@@ -136,6 +136,7 @@ document.querySelector(".button").onclick = (e) => {
               document.body.appendChild(finish);
               document.querySelector("#finish").append("Good Job");
               document.querySelector("#finish").className = "done";
+              document.querySelector(".input").blur();
             }
             document.querySelector(".word").textContent = "";
             textinput.value = "";
@@ -178,4 +179,3 @@ function secLeft() {
     }
   }, 1000);
 }
-
